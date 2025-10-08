@@ -8,15 +8,8 @@ class Warrior(Human):
         self._intelligence = 5
     
     def attack(self, target: 'Human') -> str:
-        """Воин имеет повышенный шанс крита"""
         if not self.is_alive:
             return f"{self.name} не может атаковать, так как мёртв!"
-        
-        base_damage = self._strength
-        # Воин имеет 30% шанс крита
-        is_critical = random.random() < 0.3
-        if is_critical:
-            base_damage *= 2
         
         actual_damage = target.take_damage(base_damage)
         
