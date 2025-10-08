@@ -38,13 +38,12 @@ class Game:
     def raschet_iniciativa(self) -> List[Human]:
         all_combatants = self.party + [self.boss]
         alive_combatants = [c for c in all_combatants if c.is_alive]
-        return sorted(alive_combatants, key=lambda x: x.initiative, reverse=True)
+        return sorted(alive_combatants, key=lambda x: x.iniciativa, reverse=True)
     
     def party_is_alive(self) -> bool:
         return any(hero.is_alive for hero in self.party)
     
     def display_status(self):
-        """Отображение статуса боя"""
         print(f"\n{'='*50}")
         print(f"Ход #{self.turn_count}")
         print(f"{'='*50}")
@@ -59,7 +58,6 @@ class Game:
         print(f"{'='*50}")
     
     def player_turn(self, hero: Human) -> str:
-        """Ход игрока"""
         print(f"\n🎯 Ход {hero.name}:")
         print("1 - Обычная атака")
         print("2 - Особый навык")
@@ -68,10 +66,9 @@ class Game:
         alive_targets = [t for t in [self.boss] + self.party if t.is_alive and t != hero]
         
         while True:
-            choice = input("Выберите действие (1-3): ").strip()
+            choice = input("Выберите действие (1-2): ").strip()
             
             if choice == "1":
-                # Обычная атака
                 print("Цели для атаки:")
                 for i, target in enumerate(alive_targets, 1):
                     print(f"  {i} - {target.name}")
@@ -86,7 +83,6 @@ class Game:
                     print("❌ Введите число")
             
             elif choice == "2":
-                # Особый навык
                 if isinstance(hero, Healer):
                     heal_targets = [t for t in self.party if t.is_alive]
                     print("Цели для исцеления:")
@@ -102,40 +98,16 @@ class Game:
                     except ValueError:
                         print("❌ Введите число")
                 else:
-                    # Остальные атакуют босса
                     return hero.special_skill([self.boss])
-            
-            elif choice == "3":
-                # Использование предмета
-                if not hero._inventory.items:
-                    print("❌ Инвентарь пуст!")
-                    continue
-                
-                print("Инвентарь:")
-                for i, item in enumerate(hero._inventory.items, 1):
-                    print(f"  {i} - {item.name}: {item.description}")
-                
-                try:
-                    item_idx = int(input("Выберите предмет: ")) - 1
-                    if 0 <= item_idx < len(hero._inventory.items):
-                        return hero.use_item(item_idx)
-                    else:
-                        print("❌ Неверный выбор предмета")
-                except ValueError:
-                    print("❌ Введите число")
-            
-            else:
-                print("❌ Неверный выбор действия")
     
-    def run_game(self):
-        """Запуск основной игровой петли"""
+    def run_game(self): #запускsosat
         self.setup_game()
         
         while self.party_is_alive() and self.boss.is_alive:
             self.turn_count += 1
             self.display_status()
             
-            turn_order = self.calculate_initiative()
+            turn_order = self.calculate_iniciativa()
             
             for combatant in turn_order:
                 if not combatant.is_alive:
@@ -148,7 +120,6 @@ class Game:
                 if not combatant.is_alive:
                     continue
                 
-                # Ход босса
                 if combatant == self.boss:
                     print(f"\n👹 Ход {self.boss.name}:")
                     result = self.boss.special_skill(self.party)
