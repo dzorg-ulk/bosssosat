@@ -1,22 +1,19 @@
 class Warrior(Human):
     def init(self, name: str):
         super().init(name)
-        self._max_hp = 150
+        self._hpmax = 150
         self._hp = 150
-        self._strength = 15
-        self._agility = 8
-        self._intelligence = 5
+        self._sila = 15
+        self._lovkost = 8
+        self._um = 5
     
     def attack(self, target: 'Human') -> str:
         if not self.is_alive:
             return f"{self.name} не может атаковать, так как мёртв!"
         
-        actual_damage = target.take_damage(base_damage)
-        
-        if is_critical:
-            return f"⚡ СИЛЬНЫЙ УДАР! {self.name} атакует {target.name} и наносит {actual_damage} урона!"
-        else:
-            return f"{self.name} атакует {target.name} и наносит {actual_damage} урона"
+        else
+          actual_damage = target.take_damage(base_damage)
+          return f"{self.name} атакует {target.name} и наносит {actual_damage} урона"
     
     def special_skill(self, targets: List['Human']) -> str:
         """Разрубающий удар - атака по всем целям"""
@@ -37,20 +34,20 @@ class Warrior(Human):
 class Mage(Human):
     def init(self, name: str):
         super().init(name)
-        self._max_hp = 80
+        self._hpmax = 80
         self._hp = 80
-        self._max_mp = 100
+        self._mpmax = 100
         self._mp = 100
-        self._strength = 5
-        self._agility = 8
-        self._intelligence = 18
+        self._sila = 5
+        self._lovkost = 8
+        self._um = 18
     
     def attack(self, target: 'Human') -> str:
         """Маг атакует магией"""
         if not self.is_alive:
             return f"{self.name} не может атаковать, так как мёртв!"
         
-        base_damage = self._intelligence // 2
+        base_damage = self._um // 2
         actual_damage = target.take_damage(base_damage)
         
         return f"{self.name} бросает магический снаряд в {target.name} и наносит {actual_damage} урона"
@@ -69,12 +66,11 @@ class Mage(Human):
         if not target.is_alive:
             return "Цель мертва!"
         
-        base_damage = self._intelligence
+        base_damage = self._um
         actual_damage = target.take_damage(base_damage)
         
-        # Добавляем эффект горения
-        poison_effect = Effect("Горение", EffectType.POISON, 3, 5)
-        target.add_effect(poison_effect)
+        yad_effect = Effect("Горение", EffectType.YAD, 3, 5)
+        target.add_effect(yad_effect)
         
         return (f"{self.name} запускает Огненный шар в {target.name}! "
                 f"Наносит {actual_damage} урона и поджигает цель")
@@ -82,23 +78,41 @@ class Mage(Human):
 class Healer(Human):
     def init(self, name: str):
         super().init(name)
-        self._max_hp = 90
+        self._hpmax = 90
         self._hp = 90
-        self._max_mp = 80
+        self._mpmax = 80
         self._mp = 80
-        self._strength = 6
-        self._agility = 10
-        self._intelligence = 15
+        self._sila = 6
+        self._lovkost = 10
+        self._um = 15
     
     def attack(self, target: 'Human') -> str:
         """Лекарь атакует посохом"""
         if not self.is_alive:
             return f"{self.name} не может атаковать, так как мёртв!"
         
-        base_damage = max(self._strength, self._intelligence // 3)
+        base_damage = max(self._sila, self._um // 3)
         actual_damage = target.take_damage(base_damage)
         
         return f"{self.name} бьёт посохом {target.name} и наносит {actual_damage} урона"
     
     def special_skill(self, targets: List['Human']) -> str:
         """Исцеление - восстанавливает HP союзникам"""
+        if self._mp < 25:
+            return f"Недостаточно MP для использования Исцеления!"
+        
+        if not targets:
+            return "Нет целей для исцеления!"
+        
+        self._mp -= 25
+        target = targets[0]
+        
+        if not target.is_alive:
+            return "Нельзя исцелить мёртвого!"
+        
+        heal_amount = self._um
+        old_hp = target._hp
+        target._hp = min(target._hp + heal_amount, target._max_hp)
+        actual_heal = target._hp - old_hp
+        
+        return f"{self.name} исцеляет {target.name} на {actual_heal} HP"
