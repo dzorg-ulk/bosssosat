@@ -116,3 +116,22 @@ class Healer(Human):
         actual_heal = target._hp - old_hp
         
         return f"{self.name} исцеляет {target.name} на {actual_heal} HP"
+
+
+class Boss(Human):
+    def init(self, name: str, level: int = 5):
+        super().init(name, level)
+        self._hpmax = 400
+        self._hp = 400
+        self._mpmax = 200
+        self._mp = 200
+        self._sila = 20
+        self._lovkost = 12
+        self._um = 15
+        
+    
+    def attack(self, target: 'Human') -> str:
+        """Атака босса с повышенным уроном"""
+        base_damage = self._sila + 5
+        actual_damage = target.take_damage(base_damage)
+        return f"{self.name} мощно атакует {target.name} и наносит {actual_damage} урона!"
