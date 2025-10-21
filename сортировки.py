@@ -158,10 +158,6 @@ print(f"Итераций: {iterations}")
 
 logging.info("Конец программы")
 
-import logging
-
-logging.basicConfig(level=logging.INFO, filename="py_log.log", filemode="w")
-
 # слияние
 def merge(left_list, right_list, merge_iterations):
     logging.info(f"Начало слияния: left={left_list}, right={right_list}")
@@ -310,7 +306,7 @@ print(f"Быстрая сортировка: {random_list_of_nums}")
 print(f"Вызовов partition: {partition_count}, рекурсивных вызовов: {sort_count}")
 
 # встроенные
-logging.info("=== ВСТРОЕННАЯ СОРТИРОВКА ===")
+logging.info("Встроенная стортировка")
 l = [2, 1, 1, 3, 1, 2, 2]
 logging.info(f"Исходный список: {l}")
 l.sort()
@@ -325,7 +321,7 @@ print(f"Встроенная сортировка (sorted): {sorted_l2}")
 print(f"Оригинальный список: {l2}")
 
 # встроенные в обратном порядке
-logging.info("=== ВСТРОЕННАЯ СОРТИРОВКА В ОБРАТНОМ ПОРЯДКЕ ===")
+logging.info("Встроенная сортировка в обратном порядке")
 l3 = [1, 2, 4, 3]
 logging.info(f"Исходный список: {l3}")
 l3.sort(reverse=True)
