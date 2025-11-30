@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
@@ -7,11 +8,16 @@
     <list default="true" id="db5ec89f-0002-475e-ad76-38faf509c3c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+  <component name="ChangeListManager">
+    <list default="true" id="9c371cb8-0301-48b2-8637-ae4952ead01a" name="Changes" comment="" />
+>>>>>>> a5a9620ecbae0110e208318c01d1805636cb978e
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -19,22 +25,29 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> a5a9620ecbae0110e208318c01d1805636cb978e
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 7
 }]]></component>
+<<<<<<< HEAD
   <component name="ProjectId" id="36D4K2da5D7riztMrM9hDqvxwk6" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+=======
+  <component name="ProjectId" id="35hRIZmcvmbWdHJBMEmxDCj2tGu" />
+>>>>>>> a5a9620ecbae0110e208318c01d1805636cb978e
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.main.executor": "Run",
@@ -76,6 +89,13 @@
       </list>
     </recent_temporary>
   </component>
+=======
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+>>>>>>> a5a9620ecbae0110e208318c01d1805636cb978e
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -85,11 +105,19 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="db5ec89f-0002-475e-ad76-38faf509c3c1" name="Changes" comment="" />
       <created>1764527740644</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764527740644</updated>
+=======
+      <changelist id="9c371cb8-0301-48b2-8637-ae4952ead01a" name="Changes" comment="" />
+      <created>1763560237557</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763560237557</updated>
+>>>>>>> a5a9620ecbae0110e208318c01d1805636cb978e
     </task>
     <servers />
   </component>
