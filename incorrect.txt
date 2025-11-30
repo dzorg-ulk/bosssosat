@@ -1,0 +1,4 @@
+2025-01-01;food;apple;10;2
+bad line without enough fields
+2025-01-03;food;banana;5;3
+2025-09-06;health;Vitamins C;7.30;1
