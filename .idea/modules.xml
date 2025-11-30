@@ -3,10 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/PythonProject3.iml" filepath="$PROJECT_DIR$/.idea/PythonProject3.iml" />
 =======
       <module fileurl="file://$PROJECT_DIR$/.idea/PythonProject2.iml" filepath="$PROJECT_DIR$/.idea/PythonProject2.iml" />
 >>>>>>> a5a9620ecbae0110e208318c01d1805636cb978e
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/PythonProject.iml" filepath="$PROJECT_DIR$/.idea/PythonProject.iml" />
+>>>>>>> 4bc23e0f7bfcfd4bf22defb70c6683b5538d587c
     </modules>
   </component>
 </project>
