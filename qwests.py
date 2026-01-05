@@ -1,5 +1,5 @@
 import random
-from game import User
+from user import User
 
 class RockPaperScissors:
     @staticmethod
@@ -28,7 +28,7 @@ class RockPaperScissors:
 
         computer = random.choice(choices)
         print(f"\nВы выбрали: {player}")
-        print(f"Компьютер выбрал: {computer}")
+        print(f"Друг выбрал: {computer}")
 
         if player == computer:
             print("НИЧЬЯ!")
@@ -37,7 +37,7 @@ class RockPaperScissors:
             print("ВЫ ВЫИГРАЛИ!")
             return "win"
         else:
-            print("Компьютер выиграл!")
+            print("Друг выиграл!")
             return "lose"
 
 class TwentyOneMatches:

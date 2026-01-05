@@ -10,5 +10,25 @@
     "story_progress": 0,
     "father_respect": 0,
     "drunk_level": 0
+  },
+  "alfit": {
+    "username": "alfit",
+    "password_hash": "998a364b79915f8c78d2646f885217ef1b0e30994d2e376439ec0741b366e331",
+    "artifacts": [],
+    "achievements": [],
+    "hp": 100,
+    "max_hp": 100,
+    "location": "start",
+    "story_progress": 0,
+    "father_respect": 0,
+    "drunk_level": 0,
+    "quests_completed": {
+      "parents": false,
+      "friends": false,
+      "father_jokes": false,
+      "vitaly_battle": false,
+      "rps_game": false,
+      "baba_zina": false
+    }
   }
 }
