@@ -1,0 +1,14 @@
+{
+  "sofafo": {
+    "username": "sofafo",
+    "password_hash": "d779e33a8dd10b9516220414b41930b14a2a68ecfcea3e689caf85e953b3b502",
+    "artifacts": [],
+    "achievements": [],
+    "hp": 100,
+    "max_hp": 100,
+    "location": "start",
+    "story_progress": 0,
+    "father_respect": 0,
+    "drunk_level": 0
+  }
+}

@@ -1,0 +1,86 @@
+# Игнорирование Python-файлов
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Игнорирование виртуальных окружений
+venv/
+env/
+ENV/
+.env
+.venv
+
+# Игнорирование IDE и редакторов
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Игнорирование файлов игровых данных
+users.json
+saves/
+quicksave.json
+*.json
+
+# Игнорирование логов и временных файлов
+*.log
+*.tmp
+*.temp
+
+# Игнорирование специфичных для ОС файлов
+Thumbs.db
+
+# Игнорирование конфигурационных файлов
+config.ini
+secrets.py
+*.cfg
+*.conf
+
+# Игнорирование кэшированных данных
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# Игнорирование архивированных версий
+*.zip
+*.tar.gz
+*.7z
+*.rar
+
+# Игнорирование тестовых и отладочных файлов
+test_*
+*_test.py
+debug_*
+main2.py
+
+# Игнорирование системных файлов
+desktop.ini
+
+# Игнорирование файлов покрытия тестами
+.coverage
+htmlcov/
+
+# Игнорирование пользовательских настроек
+.user.ini
+local_settings.py
+.env.local
