@@ -366,12 +366,10 @@ class StudentGame:
                 print("❤️  +20 HP")
                 print("Вы чувствуете легкое головокружение...")
 
-                print("\nДруг:")
-                time.sleep(1)
-
                 for i in range(3):
                     random_text = ''.join(random.choices('абвгдеёжзийклмнопрстуфхцчшщъыьэюя !?;,.', k=40))
-                    print(f"{random_text}")
+                    print("\nДруг:", "'", f"{random_text}", "'")
+                    time.sleep(1)
                     if i < 2:
                         input("Вы: 'Чего-чего?...'")
 
@@ -388,6 +386,7 @@ class StudentGame:
                 print("Неверный выбор!")
 
         print("\nДруг: 'Только не ящик пива... Придется посылать гонца за добавкой'")
+        time.sleep(3)
         print("Друг: 'Сыграем в камень-ножницы-бумага?'")
 
         input("\nНажмите Enter для игры...")
