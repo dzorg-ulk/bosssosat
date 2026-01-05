@@ -44,8 +44,6 @@ def clear_artifacts(artifacts, type):
 
     artifacts[type] = [answer]
 
-    print(answer)
-
     with open('artifacts.json', 'w', encoding='utf-8') as f:
         json.dump(artifacts, f, ensure_ascii=False, indent=4)
 
