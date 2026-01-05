@@ -220,21 +220,59 @@ artifacts.clear_artifacts("чаепитие")
 ### AI-генерация артефактов:
 ```python
 # Файл artifacts.py предоставляет функции:
-from artifacts import generate_ai_artifact, load_artifacts, save_artifact
+from artifacts import ask_qwen, load_artifacts, clear_artifacts
 
-# Генерация нового артефакта через AI
-new_artifact = generate_ai_artifact("зимние каникулы")
-# Загрузка всех артефактов
-all_artifacts = load_artifacts()
-# Сохранение нового артефакта
-save_artifact(new_artifact)
+#Запрос ИИ на генерацию нового артефакта
+def ask_qwen(prompt, base_url="http://localhost:11434"):
+    try:
+        response = requests.post(
+            f"{base_url}/api/generate",
+            json={
+                "model": "qwen2:1.5b",
+                "prompt": prompt,
+                "stream": False
+            },
+            timeout=30
+        )
+
+        if response.status_code == 200:
+            return response.json().get("response", "")
+        else:
+            return f"Ошибка сервера: {response.status_code}"
+
+    except requests.exceptions.ConnectionError:
+        return "Не удалось подключиться к Ollama. Надо запустить сервер: ollama serve"
+    except Exception as e:
+        return f"Произошла ошибка: {str(e)}"
+
+#Выгрузка артефактов
+def load_artifacts():
+    with open('artifacts.json', 'r', encoding='utf-8') as f:
+        artifacts = json.load(f)
+
+    return artifacts
+
+#Очистка старого артефакта и перезаписывание на его место нового
+def clear_artifacts(artifacts, type):
+    artifacts[type] = []
+
+    answer = ask_qwen(
+        f"""
+        Сгенерируй ОДИН случайный артефакт не больше двух слов для игры "Студент: Возвращение в родной город". Игра - текстовая RPG про студента, вернувшегося в родной город на каникулы. Артефакт должен быть реалистичным, связанным с ностальгией, детством, друзьями, родителями или студенческой жизнью. 
+
+        Формат ответа только ОДНО СЛОВО без комментариев, без спасибо и знаков препинания в именительном падеже: "Название артефакта",
+
+        Тема артефакта {type}: 
+        """)
+
+    artifacts[type] = [answer]
 ```
 
 ### База артефактов:
 Все артефакты хранятся в `artifacts.json` в формате:
 ```json
 {
-  "Название темы\квеста (theme)": ["Имя артефакта"]
+  "Название темы квеста (theme)": ["Имя артефакта"]
 }
 ```
 
