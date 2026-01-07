@@ -1,5 +1,3 @@
-# calculations_module.py
-
 import math
 from decorators_module import timer_decorator, logger_decorator
 
