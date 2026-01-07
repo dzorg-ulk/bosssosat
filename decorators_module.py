@@ -1,5 +1,3 @@
-# decorators_module.py
-
 import time
 from functools import wraps
 
