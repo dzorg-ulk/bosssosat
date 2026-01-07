@@ -1,5 +1,3 @@
-# visualization_module.py
-
 import matplotlib.pyplot as plt
 from tabulate import tabulate
 
