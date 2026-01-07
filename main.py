@@ -1,5 +1,3 @@
-# main.py (альтернативная версия без numpy)
-
 from calculations_module import functions
 from visualization_module import plot_xy, print_xy_table
 
